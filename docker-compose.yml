@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  docker-mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=vinhkien1A@
+      - MYSQL_DATABASE=notes_app
+    ports:
+      - 3306:3306
+
+  app:
+    image: springio/gs-spring-boot-docker
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://docker-mysql:3306/notes_app?autoReconnect=true&useSSL=false
+    depends_on:
+      - docker-mysql
