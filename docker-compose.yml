@@ -4,7 +4,7 @@ services:
   docker-mysql:
     image: mysql:latest
     environment:
-      - MYSQL_ROOT_PASSWORD=vinhkien1A@
+      - MYSQL_ROOT_PASSWORD=taithanh1A@
       - MYSQL_DATABASE=notes_app
     ports:
       - 3306:3306
